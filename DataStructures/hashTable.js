@@ -26,7 +26,7 @@
 
 class HashTable {
   constructor(size=53) {
-    this.keyMap = new Array(size).fill([]);
+    this.keyMap = new Array(size);
   }
 
   _hash(key) {
@@ -43,23 +43,22 @@ class HashTable {
   // SET
   set(key, value) {
     let hash = this._hash(key);
-    // if (this.keyMap[hash]) {
-      this.keyMap[hash].push([key, value])
-    // }
-    // this.keyMap[hash] = this.keyMap[hash] ? this.keyMap[hash].push([key, value]) : [[key, value]];
-    // this.keyMap[hash] = [[key, value]]
+    if (!this.keyMap[hash]) {
+      this.keyMap[hash] = [];
+    }
+    this.keyMap[hash].push([key, value]);
   }
 
   // GET
-  get(key) {
-    let hash = _hash(key);
-    let bucket = this.keyMap[key];
-    if (!bucket) { return undefined; }
-    for (let pair of bucket) {
-      if (pair[0] === key) { return pair; }
-    }
-    return;
-  }
+//   get(key) {
+//     let hash = _hash(key);
+//     let bucket = this.keyMap[key];
+//     if (!bucket) { return undefined; }
+//     for (let pair of bucket) {
+//       if (pair[0] === key) { return pair; }
+//     }
+//     return;
+//   }
 }
 
 let ht = new HashTable();
