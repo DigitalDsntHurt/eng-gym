@@ -13,7 +13,7 @@
 - can i restate the problem in my own words?
 - what are the inputs that go into the problem?
 - what are the outputs that should come from the solution to the problem?
-- can the outputs be determined from the inputs? i.e. do i have enough information to soleve the problem?
+- can the outputs be determined from the inputs? i.e. do i have enough information to solve the problem?
 - how should i label the important pieces of data that are a part of the problem?
 
 ### Explore Concrete Examples
@@ -28,3 +28,12 @@
 
 ### Solve & Simplify
 - solve the problem. and if you can't solve a simpler problem.
+
+### Look back & refactor
+- can you check the results
+- can you derive the result differently
+- can you understand it at a glance
+- can you use the result of method for some other problem
+- can you improve the performance of your solution
+- can you think of other ways to refactor
+- how have other people solved this problem
