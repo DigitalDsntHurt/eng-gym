@@ -12,14 +12,14 @@
 // is any one char unique?
 // given multiple chars, which one comes first?
 
-const isUniqueChar = (char, str) => {
-  const charCount = str.split('').filter(ch => ch === char).length
-  if (charCount === 1) {
-    return true
-  } else {
-    return false
-  }
-}
+// const isUniqueChar = (char, str) => {
+//   const charCount = str.split('').filter(ch => ch === char).length
+//   if (charCount === 1) {
+//     return true
+//   } else {
+//     return false
+//   }
+// }
 
 // THIS WORKS
 // const firstUniqueChar = (str) => {
