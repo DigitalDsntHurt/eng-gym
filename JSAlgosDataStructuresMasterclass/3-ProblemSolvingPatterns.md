@@ -6,3 +6,5 @@ Some, not all, algorithm problems fall into categories ~> patterns that can help
 ## Patterns
 
 ### Frequency Counter Pattern
+
+### Two Pointers Pattern
