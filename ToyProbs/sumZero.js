@@ -1,4 +1,4 @@
-// Write a functions that takes in an array of integers
+// Write a functions that takes in a sorted array of integers
 // and returns the first pair whose sum is zero
 
 // // WORKS
@@ -34,10 +34,10 @@ const sumZero = (arr) => {
       return [arr[left], arr[right]];
     }
     if (sum > 0) {
-      right -= 1;
+      right--;
     }
     if (sum < 0) {
-      left += 1;
+      left++;
     }
   }
 }
