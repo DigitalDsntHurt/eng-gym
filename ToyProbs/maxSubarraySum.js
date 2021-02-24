@@ -52,14 +52,23 @@
   if (arr.length === n) { return arr.reduce((num, acc) => num + acc)}
 
   // set maxSum to sum of first n elements of arr
-
+  let maxSum = 0;
+  for (let i = 0; i < n; i++) {
+    maxSum += arr[i]
+  }
   // initialize windowStart var
+  let windowStart = n;
   // initialize windowEnd var
-
+  let windowEnd = windowStart + (n - 1);
   // iterate over arr from nth element to arr.len - nth element... for each
+  while (windowStart <= arr.length - n){
     // set tmpSum var to maxSum MINUS prev item PLUS next item
+    let tmpSum = maxSum - arr[windowStart] + arr[windowEnd];
     // reset maxSum if tmpSum > maxSum
-
+    maxSum = Math.max(tmpSum, maxSum);
+    windowStart++;
+    windowEnd++;
+  }
   return maxSum;
 };
 
