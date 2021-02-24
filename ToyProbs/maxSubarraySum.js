@@ -57,7 +57,10 @@
   // initialize windowEnd var
 
   // iterate over arr from nth element to arr.len - nth element... for each
-    //
+    // set tmpSum var to maxSum MINUS prev item PLUS next item
+    // reset maxSum if tmpSum > maxSum
+
+  return maxSum;
 };
 
 console.log(maxSubarraySum([1,2,5,2,8,1,5], 2)) // 10
