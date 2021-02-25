@@ -3,7 +3,7 @@
  * the function should calculate the maximim sum of n consecutive elements in the array
  */
 
-// // NAIVE SOLUTION (iterative)
+// // NAIVE SOLUTION (broken)
 // const maxSubarraySum = (arr, n) => {
 //   if (arr.length === 0 || arr.length < n) { return null; }
 //   if (n === 0) { return 0; }
@@ -28,7 +28,7 @@
 //   return maxSum
 // };
 
-// NAIVE SOLUTION (iterative)
+// NAIVE SOLUTION (works)
 // const maxSubarraySum = (arr, n) => {
 //   if (arr.length === 0 || arr.length < n) { return null; }
 //   if (n === 0) { return 0; }
@@ -45,32 +45,69 @@
 //   return maxSum
 // };
 
-// SLIDING WINDOWS SOLUTION (iterative)
- const maxSubarraySum = (arr, n) => {
-  if (arr.length === 0 || arr.length < n) { return null; }
-  if (n === 0) { return 0; }
-  if (arr.length === n) { return arr.reduce((num, acc) => num + acc)}
+// // SLIDING WINDOWS SOLUTION
+//  const maxSubarraySum = (arr, n) => {
+//   if (arr.length === 0 || arr.length < n) { return null; }
+//   if (n === 0) { return 0; }
+//   if (arr.length === n) { return arr.reduce((num, acc) => num + acc)}
 
-  // set maxSum to sum of first n elements of arr
+//   // set maxSum to sum of first n elements of arr
+//   let maxSum = 0;
+//   for (let i = 0; i < n; i++) {
+//     maxSum += arr[i]
+//   }
+//   // initialize windowStart var
+//   let windowStart = n - 1;
+//   // initialize windowEnd var
+//   let windowEnd = windowStart + (n - 1);
+//   // iterate over arr from nth element to arr.len - nth element... for each
+//   while (windowStart <= arr.length - n){
+//     // set tmpSum var to maxSum MINUS prev item PLUS next item
+//     let tmpSum = maxSum - arr[windowStart] + arr[windowEnd];
+//     // reset maxSum if tmpSum > maxSum
+//     maxSum = Math.max(tmpSum, maxSum);
+//     windowStart++;
+//     windowEnd++;
+//   }
+//   return maxSum;
+// };
+
+// // SLIDING WINDOWS SOLUTION
+// const maxSubarraySum = (arr, n) => {
+//   if (arr.length === 0 || arr.length < n) { return null; }
+//   if (n === 0) { return 0; }
+//   if (arr.length === n) { return arr.reduce((num, acc) => num + acc); }
+//   // if (n === 1) { return Math.max(...arr); }
+
+//   let maxSum = 0;
+//   for (let i = 0; i < n; i++) {
+//     maxSum += arr[i]
+//   }
+//   let tmpSum = maxSum;
+//   let windowStart = n - 1;
+//   let windowEnd = windowStart + (n - 1);
+//   while (windowStart <= arr.length - n){
+//     tmpSum = tmpSum - arr[windowStart - 1] + arr[windowEnd];
+//     maxSum = Math.max(tmpSum, maxSum);
+//     windowStart++;
+//     windowEnd++;
+//   }
+//   return maxSum;
+// };
+
+const maxSubarraySum = (arr, n) => {
   let maxSum = 0;
+  if (arr.length < n) { return null; }
   for (let i = 0; i < n; i++) {
     maxSum += arr[i]
   }
-  // initialize windowStart var
-  let windowStart = n;
-  // initialize windowEnd var
-  let windowEnd = windowStart + (n - 1);
-  // iterate over arr from nth element to arr.len - nth element... for each
-  while (windowStart <= arr.length - n){
-    // set tmpSum var to maxSum MINUS prev item PLUS next item
-    let tmpSum = maxSum - arr[windowStart] + arr[windowEnd];
-    // reset maxSum if tmpSum > maxSum
-    maxSum = Math.max(tmpSum, maxSum);
-    windowStart++;
-    windowEnd++;
+  let tempSum = maxSum;
+  for (let i = n; i < arr.length; i++) {
+    tempSum = tempSum - arr[i - n] + arr[i];
+    maxSum = Math.max(maxSum, tempSum);
   }
   return maxSum;
-};
+}
 
 console.log(maxSubarraySum([1,2,5,2,8,1,5], 2)) // 10
 console.log(maxSubarraySum([1,2,5,2,8,1,5], 4)) // 17
