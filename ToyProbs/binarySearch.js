@@ -16,7 +16,21 @@
  */
 
 const binarySearch = (arr, val) => {
+  let arrStart = 0;
+  let arrEnd = arr.length - 1;
+  let midpoint = Math.floor(arr.length / 2);
+  let midpointValue = arr[midpoint];
+  let subArray = arr;
 
+  if (val === midpointValue) {
+    return midpoint;
+  }
+  if (val > midpointValue) {
+    subArray = arr.slice(midpoint + 1, arrEnd + 1)
+  }
+  if (val < midpointValue) {
+    subArray = arr.slice(0, midpoint)
+  }
 };
 
 console.log(binarySearch([1,3,5,7,9,11,13,15,17,19,101], 17)) // 8
