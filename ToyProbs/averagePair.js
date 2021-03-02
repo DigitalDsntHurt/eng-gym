@@ -39,15 +39,15 @@ if you get to the end, return false
 */
 
 const averagePair = (arr, targetAvg) => {
-  let first = 0;
-  let next = 1;
+  let front = 0;
+  let back = arr.length - 1;
 
-  while (next < arr.length) {
-    if ((arr[first] + arr[next]) / 2 === targetAvg) { return true; }
-    first ++;
-    next ++;
+  while (front < back) {
+    const avg = (arr[front] + arr[back]) / 2;
+    if (avg === targetAvg) { return true; }
+    if (avg < targetAvg) { front++; }
+    if (avg > targetAvg) { back--; }
   }
-
   return false;
 };
 
