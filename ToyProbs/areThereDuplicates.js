@@ -80,6 +80,14 @@
 //   return false;
 // };
 
+// MULTIPLE POINTERS PATTERN -- ONE LINER WITH SET
+const areThereDuplicates = (...args) => {
+  return new Set(args).size !== args.length;
+  // const set = new Set(args)
+  // console.log(args);
+  // console.log(set);
+  // console.log('---');
+}
 console.log(areThereDuplicates(1,2,3)) // false
 console.log(areThereDuplicates(1,2,2)) // true
 console.log(areThereDuplicates('a', 'b', 'c', 'a')) // true
