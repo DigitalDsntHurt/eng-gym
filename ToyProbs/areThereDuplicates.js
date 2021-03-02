@@ -46,25 +46,39 @@
 //   return false;
 // };
 
-// MULTIPLE POINTERS PATTERN
-const areThereDuplicates = (...rest) => {
-  rest = rest.sort();
-  let pointer1 = 0;
-  let pointer2 = 1;
+// // MULTIPLE POINTERS PATTERN
+// const areThereDuplicates = (...rest) => {
+//   rest = rest.sort();
+//   let pointer1 = 0;
+//   let pointer2 = 1;
+//
+//   while (pointer1 < rest.length && pointer2 < rest.length) {
+//     if (rest[pointer1] === rest[pointer2]) {
+//       return true;
+//     } else {
+//       if (pointer1 < pointer2) {
+//         pointer1 = pointer2 + 1;
+//       } else {
+//         pointer2 = pointer1 + 1;
+//       }
+//     }
+//   }
+//   return false;
+// };
 
-  while (pointer1 < rest.length && pointer2 < rest.length) {
-    if (rest[pointer1] === rest[pointer2]) {
-      return true;
-    } else {
-      if (pointer1 < pointer2) {
-        pointer1 = pointer2 + 1;
-      } else {
-        pointer2 = pointer1 + 1;
-      }
-    }
-  }
-  return false;
-};
+// MULTIPLE POINTERS PATTERN -- CLEANER
+// const areThereDuplicates = (...args) => {
+//   args = args.sort();
+//   let first = 0;
+//   let next = 1;
+//
+//   while (next < args.length) {
+//     if (args[first] === args[next]) { return true; }
+//     first++;
+//     next++;
+//   }
+//   return false;
+// };
 
 console.log(areThereDuplicates(1,2,3)) // false
 console.log(areThereDuplicates(1,2,2)) // true
