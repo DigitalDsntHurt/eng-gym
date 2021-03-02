@@ -36,6 +36,21 @@ while next pointer is less than length of input array
     increment next
 
 if you get to the end, return false
+
+
+ABOVE IS HYPOTHESIZED APPROXIMATION
+BELOW IS REVISED APPROXIMATION, WRITTEN AFTER SUCCESSFUL IMPLEMENTATION
+
+STRATEGY
+use two pointers, one starting at index 0 one starting at index -1
+until pointers meet/cross
+calculate average of values at each pointer
+  if avg = target average return true
+  if avg < target avg increment smaller / first pointer
+  if avg > target avg decrement larger / last pointer
+if you get to the end (= if pointers meet) without returning true return false
+
+APPROXIMATION
 */
 
 const averagePair = (arr, targetAvg) => {
