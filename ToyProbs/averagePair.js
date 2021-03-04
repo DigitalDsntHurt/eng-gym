@@ -53,19 +53,38 @@ if you get to the end (= if pointers meet) without returning true return false
 APPROXIMATION
 */
 
+// const averagePair = (arr, targetAvg) => {
+//   let front = 0;
+//   let back = arr.length - 1;
+//
+//   while (front < back) {
+//     const avg = (arr[front] + arr[back]) / 2;
+//     if (avg === targetAvg) { return true; }
+//     if (avg < targetAvg) { front++; }
+//     if (avg > targetAvg) { back--; }
+//   }
+//   return false;
+// };
+
+
 const averagePair = (arr, targetAvg) => {
   let front = 0;
   let back = arr.length - 1;
 
   while (front < back) {
     const avg = (arr[front] + arr[back]) / 2;
-    if (avg === targetAvg) { return true; }
-    if (avg < targetAvg) { front++; }
-    if (avg > targetAvg) { back--; }
+    if (avg === targetAvg) {
+      return true;
+    }
+    if (avg < targetAvg) {
+      front++;
+    }
+    if (avg > targetAvg) {
+      back--;
+    }
   }
   return false;
-};
-
+}
 console.log(averagePair([1,2,3], 2.5)) // true
 console.log(averagePair([1,3,3,5,6,7,10,12,19], 8)) // true
 console.log(averagePair([-1,0,3,4,5,6], 4.1)) // false
