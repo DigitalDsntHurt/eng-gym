@@ -21,11 +21,22 @@
       increment second pointer until value stored at its position does not equal value stored at first pointer's position
       once we hit different values
         increment pointer #1
-        set value at pointer #1 to value at pointer#2  
+        set value at pointer #1 to value at pointer#2
     if values stored at pointers are different
       increment both pointers and repeat
 
   APPROXIMATION
+  initiate front var to 0
+  initiate back var to 0
+
+  initiate while loop that ends when back pointer >= arr.length
+    if values at front and back are equal
+      increment back
+    if values at front and back are not equal
+      increment front
+      change value at front to value at back
+      increment back
+  return front + 1
 */
 
 const removeDuplicates = function(nums) {
