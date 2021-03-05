@@ -40,7 +40,20 @@
 */
 
 const removeDuplicates = function(nums) {
+  let front = 0;
+  let back = 1;
 
+  while (back < nums.length) {
+    if (nums[front] === nums[back]) {
+      back++;
+    } else {
+      front++;
+      nums[front] = nums[back];
+      back++
+    }
+  }
+
+  return front + 1;
 };
 
 console.log(removeDuplicates([1,1,2])) // 2
