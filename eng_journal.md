@@ -1,5 +1,17 @@
 
+***
+# Mar 5, 2021
 
+***
+# Mar 4, 2021
+Having difficulty intuiting the two-pointers (or frankly any) solution to isSubsequence. Here's my best shot at articulating the high-level strategy here.
+- use two pointers, one for each input string, each initialized at index 0
+- create a race condition wherein if the string1 pointer reaches the length of string1 the function returns true and if the string2 pointer reaches the length of string2 the function returns false.
+  - increment string2 pointer every loop through
+  - increment string1 pointer only if the value at string1 pointer's current index is equal to the value found at string2 pointer's current index
+
+This is a linear time O(n) solution because at most, we'll loop over each char in the longer string once.
+The naive solution would be quadratic time O(n**2) because we'd use a nested loop
 ***
 # Mar 3, 2021
 
@@ -14,4 +26,4 @@ In another sub-pattern, we set two pointers, one at the first index of an array 
 ***
 # Mar 1, 2021
 More practice reps with frequency counter pattern and two pointers pattern.
-Please with (seeming) fluency of frequency counter implementations. 
+Please with (seeming) fluency of frequency counter implementations.
