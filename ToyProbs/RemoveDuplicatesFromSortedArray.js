@@ -11,6 +11,21 @@
   O : number
   E : ignore for now
   C : O(n) time | O(1) space
+
+  STRATEGY
+  start with two pointers
+  - one at index 0
+  - one at index 1
+  while back pointer < array.length
+    if values stored at pointers are same
+      increment second pointer until value stored at its position does not equal value stored at first pointer's position
+      once we hit different values
+        increment pointer #1
+        set value at pointer #1 to value at pointer#2  
+    if values stored at pointers are different
+      increment both pointers and repeat
+
+  APPROXIMATION
 */
 
 const removeDuplicates = function(nums) {
