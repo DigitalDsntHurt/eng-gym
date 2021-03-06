@@ -17,7 +17,7 @@
 
   iterate over each char in haystack
   - if
-
+~~~GOT STUCK AND STOPPED STRATEGY ARTICULATION EFFORTS HERE
 
   APPROXIMATION
   instantiate start var to 0
@@ -42,6 +42,8 @@
 */
 
 const strStr = (haystack, needle) => {
+  if (needle.length === 0) { return 0 }
+  if (haystack.length === 0) { return -1 }
   let start = 0;
   let end = 0;
   let needlePointer = 0;
@@ -56,8 +58,10 @@ const strStr = (haystack, needle) => {
     } else {
       matchLength = 0;
       needlePointer = 0;
-      end++;
-      start = end;
+      start++;
+      end = start;
+      // end++;
+      // start = end;
     }
   }
   return -1;
@@ -65,3 +69,4 @@ const strStr = (haystack, needle) => {
 
 console.log(strStr('hello', 'll')) // 2
 console.log(strStr('aaaaa', 'bba')) // -1
+console.log(strStr('mississippi', 'issip')) // 4
