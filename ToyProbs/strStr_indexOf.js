@@ -47,21 +47,16 @@ const strStr = (haystack, needle) => {
   let start = 0;
   let end = 0;
   let needlePointer = 0;
-  let matchLength = 0;
 
   while (end < haystack.length) {
     if (haystack[end] === needle[needlePointer]) {
-      matchLength++;
-      if (matchLength === needle.length) { return start; }
+      if (end - start + 1 === needle.length) { return start; }
       end++;
       needlePointer++;
     } else {
-      matchLength = 0;
       needlePointer = 0;
       start++;
       end = start;
-      // end++;
-      // start = end;
     }
   }
   return -1;
