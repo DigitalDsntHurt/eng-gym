@@ -1,4 +1,8 @@
 
+
+***
+# Mar 6, 2021
+I need to clean up my loose ends. Today I correctly noted down what to return for edge cases then didn't code them into the solution. Want to train to minimize these kinds of own goals moving forward. 
 ***
 # Mar 5, 2021
 
