@@ -22,3 +22,10 @@ The order of elements can be changed. It doesn't matter what you leave beyond th
 
   APPROXIMATION
 */
+
+const removeElement = (nums, val) => {
+  
+};
+
+console.log(removeElement([3,2,2,3], 3)); // 2
+console.log(removeElement([0,1,2,2,3,0,4,2], 2)); // 5
