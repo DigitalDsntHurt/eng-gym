@@ -48,7 +48,6 @@ const removeElement = (nums, val) => {
       ranger++;
     }
   }
-  console.log(nums)
   return nums.length;
 };
 
