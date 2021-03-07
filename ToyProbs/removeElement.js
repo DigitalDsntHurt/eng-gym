@@ -23,19 +23,33 @@ The order of elements can be changed. It doesn't matter what you leave beyond th
   APPROXIMATION
 */
 
-const removeElement = (nums, val) => {
-  let counter = 0;
-  let ranger = 0;
+// const removeElement = (nums, val) => {
+//   let counter = 0;
+//   let ranger = 0;
+//
+//   while (ranger < nums.length) {
+//     if (nums[ranger] === val) {
+//       counter++;
+//       ranger++;
+//     } else {
+//       ranger++;
+//     }
+//   }
+//   console.log(nums)
+//   return nums.length - (counter);
+// };
 
+const removeElement = (nums, val) => {
+  let ranger = 0;
   while (ranger < nums.length) {
     if (nums[ranger] === val) {
-      counter++;
-      ranger++;
+      nums.splice(ranger, 1)
     } else {
       ranger++;
     }
   }
-  return nums.length - (counter);
+  console.log(nums)
+  return nums.length;
 };
 
 console.log(removeElement([3,2,2,3], 3)); // 2
