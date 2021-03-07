@@ -24,7 +24,18 @@ The order of elements can be changed. It doesn't matter what you leave beyond th
 */
 
 const removeElement = (nums, val) => {
-  
+  let counter = 0;
+  let ranger = 0;
+
+  while (ranger < nums.length) {
+    if (nums[ranger] === val) {
+      counter++;
+      ranger++;
+    } else {
+      ranger++;
+    }
+  }
+  return nums.length - (counter);
 };
 
 console.log(removeElement([3,2,2,3], 3)); // 2
