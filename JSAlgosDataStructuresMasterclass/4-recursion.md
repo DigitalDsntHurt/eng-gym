@@ -32,3 +32,5 @@ const outerFunction = (input) => {
   recursiveFunction(input);
 }
 ```
+High-level summary:
+- Helper method recursion is a patterns where a non-recursive outer functions calls an inner function that is recursive
