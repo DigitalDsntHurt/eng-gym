@@ -11,27 +11,43 @@ STRATEGY
 
 */
 
+// const sortedSquares = (nums) => {
+//   let front = 0;
+//   let back = nums.length - 1;
+//   while(front < back) {
+//     nums[front] = nums[front] * nums[front];
+//     nums[back] = nums[back] * nums[back];
+//     // console.log(nums)
+//     if (nums[front] > nums[back]) {
+//       nums.splice(back, 0, nums[front])
+//       nums.shift()
+//       front++;
+//       back--;
+//     } else if (nums[front] < nums[back] && nums[front] > nums[back - 1]) {
+//       nums.splice(back - 1, 0, nums[front])
+//       nums.shift()
+//       front++;
+//       back--;
+//     } else {
+//       front++;
+//       back--;
+//     }
+//   }
+//   return nums;
+// };
+
 const sortedSquares = (nums) => {
   let front = 0;
   let back = nums.length - 1;
-  while(front < back) {
-    nums[front] = nums[front] * nums[front];
-    nums[back] = nums[back] * nums[back];
-    // console.log(nums)
-    if (nums[front] > nums[back]) {
-      nums.splice(back, 0, nums[front])
-      nums.shift()
-      front++;
-      back--;
-    } else if (nums[front] < nums[back] && nums[front] > nums[back - 1]) {
-      nums.splice(back - 1, 0, nums[front])
-      nums.shift()
-      front++;
-      back--;
-    } else {
-      front++;
-      back--;
-    }
+  while(front <= back) {
+    nums[front] = nums[front] ** 2;
+    nums[back] = nums[back] ** 2;
+    // if (nums[front] > nums[back]) {
+    //   nums.splice(nums[back], 0, nums[front]);
+    //   nums.shift();
+    // }
+    front ++;
+    back --;
   }
   return nums;
 };
