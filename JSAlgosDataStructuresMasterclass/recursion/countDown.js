@@ -16,7 +16,7 @@ Write the function two ways
 // countDownIterative(8);
 
 const countDownRecursive = (n) => {
-  if (n === 0) { return }
+  if (n === 0) { return; }
   console.log(n)
   countDownRecursive(n - 1);
 };
