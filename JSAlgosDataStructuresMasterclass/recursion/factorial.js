@@ -1,12 +1,17 @@
 
 // ITERATIVE
 const factorial = (n) => {
-
+  let fac = 1;
+  while (n > 1) {
+    fac *= n;
+    n--;
+  }
+  return fac;
 };
-factorial(8)
+console.log(factorial(8)) // 40320
 
 // RECURSIVE
 // const factorial = (n) => {
 //
 // };
-// factorial(8);
+console.log(factorial(8)) // 40320
