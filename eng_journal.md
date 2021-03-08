@@ -1,8 +1,15 @@
 
+***
+# Mar 7, 2021
+I need to do more reflecting on solution patterns:
+- what are the indicators within a prompt that point me towards one solution pattern or another?
+- what are all the common sub-patterns / variations of each pattern?
+- when to use which?
+practice. codify. repeat a lot. 
 
 ***
 # Mar 6, 2021
-I need to clean up my loose ends. Today I correctly noted down what to return for edge cases then didn't code them into the solution. Want to train to minimize these kinds of own goals moving forward. 
+I need to clean up my loose ends. Today I correctly noted down what to return for edge cases then didn't code them into the solution. Want to train to minimize these kinds of own goals moving forward.
 ***
 # Mar 5, 2021
 
