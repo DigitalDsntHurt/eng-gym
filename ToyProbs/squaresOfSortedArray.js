@@ -57,20 +57,40 @@ STRATEGY
 New Approach
 
 */
+// const sortedSquares = (nums) => {
+//   const sortedSquares = [];
+//   let leftIdx = 0;
+//   let rightIdx = nums.length - 1;
+//
+//   while (leftIdx <= rightIdx) {
+//     let left = nums[leftIdx] ** 2;
+//     let right = nums[rightIdx] ** 2;
+//     if (left >= right) {
+//       sortedSquares.unshift(left);
+//       leftIdx++;
+//     } else {
+//       sortedSquares.unshift(right);
+//       rightIdx--;
+//     }
+//   }
+//   return sortedSquares;
+// };
+
 const sortedSquares = (nums) => {
   const sortedSquares = [];
-  let leftIdx = 0;
-  let rightIdx = nums.length - 1;
+  let left = 0;
+  let right = nums.length - 1;
 
-  while (leftIdx <= rightIdx) {
-    let left = nums[leftIdx] ** 2;
-    let right = nums[rightIdx] ** 2;
-    if (left >= right) {
-      sortedSquares.unshift(left);
-      leftIdx++;
+  while (left <= right) {
+    let newLeft = nums[left] ** 2;
+    let newRight = nums[right] ** 2;
+
+    if (newLeft >= newRight) {
+      sortedSquares.unshift(newLeft);
+      left++;
     } else {
-      sortedSquares.unshift(right);
-      rightIdx--;
+      sortedSquares.unshift(newRight);
+      right--;
     }
   }
   return sortedSquares;
