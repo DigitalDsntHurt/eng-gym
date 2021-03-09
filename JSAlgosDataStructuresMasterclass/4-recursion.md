@@ -34,3 +34,8 @@ const outerFunction = (input) => {
 ```
 High-level summary:
 - Helper method recursion is a patterns where a non-recursive outer functions calls an inner function that is recursive
+
+## Pure Recursion Tips
+* for arrays, use methods like slice, concat, spread that make copies of arrays so we don't mutate them
+* same idea with strings but strings are immutable so we'll need to use methods like slice, substr or substring to make copies
+* for objects use Object.assign or the spread operator
