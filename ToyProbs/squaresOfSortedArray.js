@@ -36,20 +36,44 @@ STRATEGY
 //   return nums;
 // };
 
+// const sortedSquares = (nums) => {
+//   let front = 0;
+//   let back = nums.length - 1;
+//   while(front <= back) {
+//     nums[front] = nums[front] ** 2;
+//     nums[back] = nums[back] ** 2;
+//     // if (nums[front] > nums[back]) {
+//     //   nums.splice(nums[back], 0, nums[front]);
+//     //   nums.shift();
+//     // }
+//     front ++;
+//     back --;
+//   }
+//   return nums;
+// };
+
+
+/*
+New Approach
+
+*/
 const sortedSquares = (nums) => {
-  let front = 0;
-  let back = nums.length - 1;
-  while(front <= back) {
-    nums[front] = nums[front] ** 2;
-    nums[back] = nums[back] ** 2;
-    // if (nums[front] > nums[back]) {
-    //   nums.splice(nums[back], 0, nums[front]);
-    //   nums.shift();
-    // }
-    front ++;
-    back --;
+  const sortedSquares = [];
+  let leftIdx = 0;
+  let rightIdx = nums.length - 1;
+
+  while (leftIdx <= rightIdx) {
+    let left = nums[leftIdx] ** 2;
+    let right = nums[rightIdx] ** 2;
+    if (left >= right) {
+      sortedSquares.unshift(left);
+      leftIdx++;
+    } else {
+      sortedSquares.unshift(right);
+      rightIdx--;
+    }
   }
-  return nums;
+  return sortedSquares;
 };
 
 console.log(sortedSquares([-4,-1,0,3,10])) // [0,1,9,16,100]
