@@ -1,11 +1,36 @@
+***
+# Mar 8, 2021
 
+### Trying to clarify my thinking around two pointers solution to squaresOfSortedArray problem.
+
+Here's how the solution works:
+- instantiate a new array to be filled with sorted squares and then returned
+- instantiate two pointers: one at front and one at back of array
+- compare the squares of the values pointed at by each pointer
+  - the larger squared value gets placed at index 0 of the return array (unshift)
+  - the pointer whose value won out gets moved towards the middle (right pointer always decrements, left pointer always increments) of the input array
+
+repeat until pointers cross
+
+_A couple of conceptual keystones : _
+
+1 - The two pointers start at each end of the input array and move towards each other. The key here is that they never move at the same time... only the pointer whose squared value has just been added to the output array is moved. This is how we ensure no values are skipped.
+
+2 - By always adding the larger of two comparison valued onto the front of the output array, we're creating an ascending sort order where every subsequent element added to the output array pushes the larger elements further towards the back.
+
+3 - Of course, none of these approaches work on an unsorted input array.
+
+### Another repeat pitfall
+I'm finding i often get bogged down in looking for solutions of optimal space AND time complexity. If this case, for example working on squaresOfSortedArray, I came to two pointers rather quickly but struggled to find a nice working solution because i was aiming for O(1) constant space complexity.
+
+Not sure how to improve on that besides at the top of every problem, while i'm going IOCE, make hypotheses about time and space complexity constraints, then reason about them. The hope would be that this habit will draw a more meaningful path forward AND provide more concrete thinking to look back on when I get stuck. 
 ***
 # Mar 7, 2021
 I need to do more reflecting on solution patterns:
 - what are the indicators within a prompt that point me towards one solution pattern or another?
 - what are all the common sub-patterns / variations of each pattern?
 - when to use which?
-practice. codify. repeat a lot. 
+practice. codify. repeat a lot.
 
 ***
 # Mar 6, 2021
