@@ -1,10 +1,26 @@
 
 
-// Pure Recursion
+// Iterative Solution
+// time complexity : O(n)
+// space complexity: O(n)
 const collectAllOdds = (arr) => {
-  
+  const odds = [];
+  arr.forEach(num => {if(num % 2 !== 0) { odds.push(num) }})
+  return odds;
 };
 console.log(collectAllOdds([1,2,3,4,5,6,7,8])) // [1,3,5,7]
+// // Helper Method Recursion Solution
+// const collectAllOdds = (arr) => {
+//
+// };
+// console.log(collectAllOdds([1,2,3,4,5,6,7,8])) // [1,3,5,7]
+// // Pure Recursion Solution
+// const collectAllOdds = (arr) => {
+//
+// };
+// console.log(collectAllOdds([1,2,3,4,5,6,7,8])) // [1,3,5,7]
+
+
 
 // // Helper Method Recursion
 // const collectAllOdds = (arr) => {
