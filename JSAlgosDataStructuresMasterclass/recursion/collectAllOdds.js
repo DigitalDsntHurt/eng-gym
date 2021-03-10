@@ -33,10 +33,13 @@
 // console.log(collectAllOdds([1,2,3,4,5,6,7,8])) // [1,3,5,7]
 
 // Pure Recursion Solution
+// space complexity : O(1)
+// time complexity : O(n)
 const collectAllOdds = (arr) => {
   if (arr.length === 0) { return arr; }
-  if (arr[0] % 2 !== 0) { return [arr[0]].concat(collectAllOdds(arr.slice(1))); }
-  return [].concat(collectAllOdds(arr.slice(1)));
+  return arr[0] % 2 !== 0 ?
+         [arr[0]].concat(collectAllOdds(arr.slice(1))) :
+         [].concat(collectAllOdds(arr.slice(1)));
 };
 console.log(collectAllOdds([1,2,3,4,5,6,7,8])) // [1,3,5,7]
 
