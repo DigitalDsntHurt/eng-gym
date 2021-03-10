@@ -20,23 +20,28 @@
 // console.log(collectAllOdds([1,2,3,4,5,6,7,8])) // [1,3,5,7]
 
 // Helper Method Recursion Solution
-const collectAllOdds = (arr) => {
-  const odds = [];
-  const collectOdds = (inputArray) => {
-    if (inputArray.length === 0) { return; }
-    if (inputArray[0] % 2 !== 0) { odds.push(inputArray[0])}
-    collectOdds(inputArray.slice(1));
-  };
-  collectOdds(arr);
-  return odds;
-};
-console.log(collectAllOdds([1,2,3,4,5,6,7,8])) // [1,3,5,7]
-
-// // Pure Recursion Solution
 // const collectAllOdds = (arr) => {
-//
+//   const odds = [];
+//   const collectOdds = (inputArray) => {
+//     if (inputArray.length === 0) { return; }
+//     if (inputArray[0] % 2 !== 0) { odds.push(inputArray[0])}
+//     collectOdds(inputArray.slice(1));
+//   };
+//   collectOdds(arr);
+//   return odds;
 // };
 // console.log(collectAllOdds([1,2,3,4,5,6,7,8])) // [1,3,5,7]
+
+// Pure Recursion Solution
+const collectAllOdds = (arr) => {
+  if (arr.length === 0) { return arr; }
+  if (arr[0] % 2 !== 0) {
+    return [arr[0]].concat(collectAllOdds(arr.slice(1)));
+  } else {
+    return [].concat(collectAllOdds(arr.slice(1)));
+  }
+};
+console.log(collectAllOdds([1,2,3,4,5,6,7,8])) // [1,3,5,7]
 
 
 
