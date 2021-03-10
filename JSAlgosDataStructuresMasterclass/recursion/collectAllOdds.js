@@ -1,14 +1,24 @@
 
 
-// Iterative Solution
-// time complexity : O(n)
-// space complexity: O(n)
+// // Iterative Solution
+// // time complexity : O(n)
+// // space complexity: O(n)
+// const collectAllOdds = (arr) => {
+//   const odds = [];
+//   arr.forEach(num => {if(num % 2 !== 0) { odds.push(num) }})
+//   return odds;
+// };
+// console.log(collectAllOdds([1,2,3,4,5,6,7,8])) // [1,3,5,7]
+
+// Optimized Iterative Solution
+// time complexity : O(n) ... or is this O(n**2) and we just improved space complexity and drastsically degraded time complexity?
+// space complexity: O(1)
 const collectAllOdds = (arr) => {
-  const odds = [];
-  arr.forEach(num => {if(num % 2 !== 0) { odds.push(num) }})
-  return odds;
+  arr.forEach((num, i) => { if(num % 2 === 0) { arr.splice(i, 1) }})
+  return arr;
 };
 console.log(collectAllOdds([1,2,3,4,5,6,7,8])) // [1,3,5,7]
+
 // // Helper Method Recursion Solution
 // const collectAllOdds = (arr) => {
 //
