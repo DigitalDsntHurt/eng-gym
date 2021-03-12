@@ -16,13 +16,17 @@ if filtered values != 0 return false else return true
 // this strategy would be linear space, linear time
 */
 
-const containsDuplicate = (nums) => {
-  const counter = {};
-  nums.forEach(n => counter[n] = ++counter[n] || 1 )
-  let freqs = Object.entries(counter).map(pair => pair[1]);
-  return !freqs.every(freq => freq === 1);
-};
+// // frequency counter pattern
+// const containsDuplicate = (nums) => {
+//   const counter = {};
+//   nums.forEach(n => counter[n] = ++counter[n] || 1 )
+//   let freqs = Object.entries(counter).map(pair => pair[1]);
+//   return !freqs.every(freq => freq === 1);
+// };
 
+const containsDuplicate = (nums) => {
+  return new Set(nums).size < nums.length;
+};
 console.log(containsDuplicate([1, 2, 3, 1])); // true
 console.log(containsDuplicate([1, 2, 3, 4])); // false
 console.log(containsDuplicate([1,1,1,3,3,4,3,2,4,2])); // true
