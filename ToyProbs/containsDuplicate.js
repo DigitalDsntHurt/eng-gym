@@ -18,10 +18,11 @@ if filtered values != 0 return false else return true
 
 const containsDuplicate = (nums) => {
   const counter = {};
-  nums.forEach(n => ++counter[n] || counter[n] = 1 )
-  return counter
+  nums.forEach(n => counter[n] = ++counter[n] || 1 )
+  let freqs = Object.entries(counter).map(pair => pair[1]);
+  return !freqs.every(freq => freq === 1);
 };
 
-console.log(containsDuplicate([1, 2, 3, 1]));
-console.log(containsDuplicate([1, 2, 3, 4]));
-console.log(containsDuplicate([1,1,1,3,3,4,3,2,4,2]));
+console.log(containsDuplicate([1, 2, 3, 1])); // true
+console.log(containsDuplicate([1, 2, 3, 4])); // false
+console.log(containsDuplicate([1,1,1,3,3,4,3,2,4,2])); // true
