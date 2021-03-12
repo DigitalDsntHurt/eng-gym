@@ -31,15 +31,28 @@ if filtered values != 0 return false else return true
 // };
 // // this is constant space & linear time, specifically O(n). BUT we modify the input.
 
+// // // return early if we find a dup
+// const containsDuplicate = (nums) => {
+//   const freqs = {};
+//   for (let i = 0; i < nums.length; i++) {
+//     freqs[nums[i]] = ++freqs[nums[i]] || 1;
+//     if (freqs[nums[i]] > 1) { return true; }
+//   }
+//   return false;
+// };
+// // // this is linear space and linear time
+
 // // return early if we find a dup
 const containsDuplicate = (nums) => {
   const freqs = {};
   for (let i = 0; i < nums.length; i++) {
-    freqs[nums[i]] = ++freqs[nums[i]] || 1;
-    if (freqs[nums[i]] > 1) { return true; }
+    if (freqs[nums[i]] === 1) { return true; }
+    freqs[nums[i]] = 1;
   }
   return false;
 };
+// // this is linear space and linear time
+
 console.log(containsDuplicate([1, 2, 3, 1])); // true
 console.log(containsDuplicate([1, 2, 3, 4])); // false
 console.log(containsDuplicate([1,1,1,3,3,4,3,2,4,2])); // true
