@@ -23,9 +23,22 @@ if filtered values != 0 return false else return true
 //   let freqs = Object.entries(counter).map(pair => pair[1]);
 //   return !freqs.every(freq => freq === 1);
 // };
+// // this is linear space & linear time, specifically O(3n)
 
+// // use Set
+// const containsDuplicate = (nums) => {
+//   return new Set(nums).size < nums.length;
+// };
+// // this is constant space & linear time, specifically O(n). BUT we modify the input.
+
+// // return early if we find a dup
 const containsDuplicate = (nums) => {
-  return new Set(nums).size < nums.length;
+  const freqs = {};
+  for (let i = 0; i < nums.length; i++) {
+    freqs[nums[i]] = ++freqs[nums[i]] || 1;
+    if (freqs[nums[i]] > 1) { return true; }
+  }
+  return false;
 };
 console.log(containsDuplicate([1, 2, 3, 1])); // true
 console.log(containsDuplicate([1, 2, 3, 4])); // false
