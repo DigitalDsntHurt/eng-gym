@@ -10,13 +10,30 @@
   C :
   - o(n) time
   - o(1) space
+
+  Brute Force
+  sort input array
+  check : is first element 0
+    if yes great, if no, return 0
+  check : is last element n
+    if yes great, if no, return n
+  iterate over input array, checking for non-consecutive values
+  when you find two non-consecutive values return the value between them
+  ==>> o(1) space
+  ==>> o(2n)
+
 */
 
 const missingNumber = function(nums) {
-  
+  nums.sort();
+  if (nums[0] !== 0) return 0;
+  if (nums[nums.length - 1] !== nums.length) return nums.length;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i + 1] - nums[i] !== 1) { return nums[i] + 1 }
+  }
 };
 
 console.log(missingNumber([3,0,1])) // 2
 console.log(missingNumber([0,1])) // 2
-console.log(missingNumber([[9,6,4,2,3,5,7,0,1]])) // 8
+console.log(missingNumber([9,6,4,2,3,5,7,0,1])) // 8
 console.log(missingNumber([0])) // 1
