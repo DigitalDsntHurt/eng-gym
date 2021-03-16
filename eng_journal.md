@@ -1,6 +1,11 @@
 ***
+# Mar 16, 2021
+So my linkedList's push implementation reveals an ambiguity in my thinking. I was setting the new node's next property to the current tail whereas it's the current tail whose next property should be set to the new node.
+
+The way i had it, isn't a real linkedList. In fact, it's almost a U where the head pointer points to the first node added and the tail pointer points to the most recently added node and each subsequently added node points to the previous node / previous tail. Whereas in reality, each time we add a new node to the tail, the previous tail should point to the new tail. 
+***
 # Mar 15, 2021
-As life gets crazier, daily habits become more, not less important. 
+As life gets crazier, daily habits become more, not less important.
 
 ***
 # Mar 8, 2021
