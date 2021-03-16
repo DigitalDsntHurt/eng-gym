@@ -31,24 +31,39 @@ class LinkedList {
       return this;
     }
 
+    // // MY VERSION 1
+    // pop() {
+    //   // instantiate var current node = this.tail.next
+    //   // instantiate var prev node = this.tail
+    //   // loop while currentNode !== head
+    //     // currentNode = currentNode.next
+    //     // prevNode = prevNode.next
+    //   // this.head = prevNode
+    //   // this.head.next = null
+    //   // decrement length
+    //   let prevNode = this.tail;
+    //   let currentNode = this.tail.next;
+    //   while (currentNode !== this.head) {
+    //     prevNode = prevNode.next;
+    //     currentNode = currentNode.next;
+    //   }
+    //   this.head = prevNode;
+    //   this.head.next = null;
+    //   this.length--;
+    // }
+
+    // MY VERSION 2
     pop() {
-      // instantiate var current node = this.tail.next
-      // instantiate var prev node = this.tail
-      // loop while currentNode !== head
-        // currentNode = currentNode.next
-        // prevNode = prevNode.next
-      // this.head = prevNode
-      // this.head.next = null
-      // decrement length
-      let prevNode = this.tail;
-      let currentNode = this.tail.next;
-      while (currentNode !== this.head) {
-        prevNode = prevNode.next;
-        currentNode = currentNode.next;
+      // if there are no nodes in the list return undefined
+      
+    }
+
+    // COLT'S VERSION
+    pop() {
+      let current = this.head;
+      while (current) {
+        current = current.next;
       }
-      this.head = prevNode;
-      this.head.next = null;
-      this.length--;
     }
 
     find(value) {
