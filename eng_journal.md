@@ -1,4 +1,8 @@
 ***
+# Mar 15, 2021
+As life gets crazier, daily habits become more, not less important. 
+
+***
 # Mar 8, 2021
 
 ### Trying to clarify my thinking around two pointers solution to squaresOfSortedArray problem.
@@ -23,7 +27,7 @@ _A couple of conceptual keystones : _
 ### Another repeat pitfall
 I'm finding i often get bogged down in looking for solutions of optimal space AND time complexity. If this case, for example working on squaresOfSortedArray, I came to two pointers rather quickly but struggled to find a nice working solution because i was aiming for O(1) constant space complexity.
 
-Not sure how to improve on that besides at the top of every problem, while i'm going IOCE, make hypotheses about time and space complexity constraints, then reason about them. The hope would be that this habit will draw a more meaningful path forward AND provide more concrete thinking to look back on when I get stuck. 
+Not sure how to improve on that besides at the top of every problem, while i'm going IOCE, make hypotheses about time and space complexity constraints, then reason about them. The hope would be that this habit will draw a more meaningful path forward AND provide more concrete thinking to look back on when I get stuck.
 ***
 # Mar 7, 2021
 I need to do more reflecting on solution patterns:
