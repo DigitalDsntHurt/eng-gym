@@ -4,17 +4,31 @@ class LinkedList {
       this.tail = null;
       this.length = 0;
     }
+    // // MY VERSION
+    // push(value) {
+    //   const node = new Node(value);
+    //   if (this.length === 0) {
+    //     this.head = node;
+    //     this.tail = node;
+    //   } else {
+    //     node.next = this.tail;
+    //     this.tail = node;
+    //   }
+    //   this.length++;
+    // }
 
+    // // COLT'S VERSION
     push(value) {
       const node = new Node(value);
-      if (this.length === 0) {
+      if (!this.head) { // if there is no head
         this.head = node;
         this.tail = node;
       } else {
-        node.next = this.tail;
+        this.tail.next = node;
         this.tail = node;
       }
       this.length++;
+      return this;
     }
 
     pop() {
