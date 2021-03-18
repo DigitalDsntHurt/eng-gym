@@ -68,3 +68,20 @@ const findDisappearedNumbers = (arr) => {
 };
 
 console.log(findDisappearedNumbers([4,3,2,7,8,2,3,1])) // [5,6]
+
+/*
+  STUDY these solutions
+  - https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/discuss/324205/JS-solution
+  - https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/discuss/624435/Runtime%3A-76-ms-faster-than-100.00
+
+  what seems to be happening is
+  they modify the input array
+    take the current value and get its absolute value
+    subtract 1 from that absolute value to get the new index
+    re-set the input array at the new calculated index to the negative
+
+    this leaves you with all negative values except the values missing from the original input array
+
+    now we can iterate over the altered input array and select only those elements with positive values
+
+*/
