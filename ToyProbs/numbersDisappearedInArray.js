@@ -42,12 +42,24 @@
           numberOfMissingElements--
 
     return missingElements;
-          
+
 */
 
 
 const findDisappearedNumbers = (arr) => {
-
+  let missingElements = [];
+  arr = arr.sort();
+  arr.forEach((num, idx) => {
+    if (num !== idx + 1) {
+      let numberOfMissingElements = num - idx - 1;
+      let currentElement = num; // maybe i dont need this line and can refactor to decrement num directly?
+      while (numberOfMissingElements > 0) {
+        missingElements.push(currentElement--);
+        numberOfMissingElements--;
+      }
+    }
+  })
+  return missingElements;
 };
 
 console.log(findDisappearedNumbers([4,3,2,7,8,2,3,1])) // [5,6]
