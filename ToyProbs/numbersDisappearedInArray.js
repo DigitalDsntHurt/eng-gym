@@ -41,7 +41,8 @@
           missingElements.push(currentElement--)
           numberOfMissingElements--
 
-    return missingElements;      
+    return missingElements;
+          
 */
 
 
