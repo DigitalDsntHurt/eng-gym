@@ -42,19 +42,24 @@
           numberOfMissingElements--
 
     return missingElements;
-
+PROBLEM WITH THE ABOVE APPROACH IS IT DOESN'T ACCOUNT FOR REPEATED ELEMENTS IN THE INPUT ARRAY
 */
 
 
 const findDisappearedNumbers = (arr) => {
   let missingElements = [];
-  arr = arr.sort();
+  arr = [...new Set(arr.sort())];
   arr.forEach((num, idx) => {
+    console.log(idx)
+    console.log(num)
+    console.log(num !== idx + 1)
+    console.log('===')
     if (num !== idx + 1) {
       let numberOfMissingElements = num - idx - 1;
       let currentElement = num; // maybe i dont need this line and can refactor to decrement num directly?
       while (numberOfMissingElements > 0) {
-        missingElements.push(currentElement--);
+        currentElement--;
+        missingElements.push(currentElement);
         numberOfMissingElements--;
       }
     }
