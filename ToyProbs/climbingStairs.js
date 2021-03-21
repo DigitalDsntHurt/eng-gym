@@ -7,13 +7,22 @@
 
   I: number
   O: number
-  E:
+  E: n/a
   C:
+
+  APPROACH #1
+  - how many ways are there to climb to the top of a staircase whose n = 1?
+    - 1 ([1])
+  - how many ways are there to climb to the top of a staircase whose n = 2?
+    - 2 ([2], [1,1])
+  - how many ways are there to climb to the top of a staircase whose n = 3?
+    - 3 ([1, 1, 1], [1, 2], [2, 1])
 
 
 */
 
 const climbStairs = (n) => {
+  
 
 };
 
