@@ -19,6 +19,10 @@
     - 3 ([1, 1, 1], [1, 2], [2, 1])
 
 
+!!!!!!!!!!!!!!!!!!!!!!!!!
+i don't understand it fully, but among the weird and confusing solutions
+here's the one i'm closest to groking :
+- https://leetcode.com/problems/climbing-stairs/discuss/914779/Easy-DP-JS-Solution
 */
 
 const climbStairs = (n) => {
