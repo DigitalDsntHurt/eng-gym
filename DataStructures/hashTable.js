@@ -42,8 +42,8 @@ class HashTable {
 
   // SET
   set(key, value) {
-    let hash = _hash(key);
-    this.keyMap[hash] = this.keyMap[hash].push([key, value]) || [[key, value]];
+    let hash = this._hash(key);
+    this.keyMap[hash] = this.keyMap[hash] ? this.keyMap[hash].push([key, value]) : [[key, value]];
   }
 
   // GET
@@ -57,3 +57,10 @@ class HashTable {
     return;
   }
 }
+
+let ht = new HashTable();
+ht.set('first key', 'first value')
+ht.set('james', 'bond')
+ht.set('ninetyNine', 'gretzgy')
+ht.set('first key', 'second val')
+console.log(JSON.stringify(ht));
