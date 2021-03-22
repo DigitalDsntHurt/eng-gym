@@ -45,4 +45,15 @@ class HashTable {
     let hash = _hash(key);
     this.keyMap[hash] = this.keyMap[hash].push([key, value]) || [[key, value]];
   }
+
+  // GET
+  get(key) {
+    let hash = _hash(key);
+    let bucket = this.keyMap[key];
+    if (!bucket) { return undefined; }
+    for (let pair of bucket) {
+      if (pair[0] === key) { return pair; }
+    }
+    return;
+  }
 }
