@@ -11,6 +11,17 @@
 
  // BASIC HASHTABLE class
  https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/learn/lecture/8344862#content
+
+ // SET
+ - accepts a key and a value
+ - hashes the key
+ - stores the k/v pair in the hash table via separate chaining
+
+ // GET
+ - accepts a key
+ - hashes the key
+ - retrieves the key value pair from the hashTable
+ - if the key isn't found return undefined
 */
 
 class HashTable {
@@ -29,19 +40,9 @@ class HashTable {
     return total;
   }
 
-  insert() {
-
-  }
-
-  findByKey() {
-
-  }
-
-  remove() {
-
-  }
-
-  contains() {
-
+  // SET
+  set(key, value) {
+    let hash = _hash(key);
+    this.keyMap[hash] = this.keyMap[hash].push([key, value]) || [[key, value]];
   }
 }
