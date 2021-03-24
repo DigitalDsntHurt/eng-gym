@@ -27,13 +27,13 @@
 
 const hasCycle = (head) => {
 
-  traverse(node) {
+  const traverse = (node) => {
     if (!node.next) { return false; }
     if (node.seen) { return true; }
     node.seen = true;
     return traverse(node.next);
   }
-  return traverse(head[0])
+  return traverse(head)
 };
 //
 // console.log(hasCycle([3,2,0,-4])) // true
