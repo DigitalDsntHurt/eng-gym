@@ -19,7 +19,7 @@
   STRATEGY ~ add a property
   write a recursive function that takes in a node
     if node.next doesn't exist return false
-    if node.next.seen return true
+    if node.seen return true
     set a new property on node ~ .seen = true
     return recursive call with head.next
 
@@ -27,4 +27,15 @@
 
 const hasCycle = (head) => {
 
+  traverse(node) {
+    if (!node.next) { return false; }
+    if (node.seen) { return true; }
+    node.seen = true;
+    return traverse(node.next);
+  }
+  return traverse(head[0])
 };
+//
+// console.log(hasCycle([3,2,0,-4])) // true
+// console.log(hasCycle([1,2])) // true
+// console.log(hasCycle([1])) // false
