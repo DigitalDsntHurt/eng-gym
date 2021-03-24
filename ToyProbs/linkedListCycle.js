@@ -9,12 +9,19 @@
   pointer is connected to. Note that pos is not passed as a parameter.
   Return true if there is a cycle in the linked list. Otherwise, return false.
 
-  I :
-  O :
+  I : head of a linked list ... in our case his is likely an array
+  O : boolean ... says whether or not the list is cyclical
   E :
-  C :
+   - no arg provided
+   - arg not an array
+  C : n/a
 
-  STRATEGY
+  STRATEGY ~ add a property
+  write a recursive function that takes in a node
+    if node.next doesn't exist return false
+    if node.next.seen return true
+    set a new property on node ~ .seen = true
+    return recursive call with head.next
 
 */
 
