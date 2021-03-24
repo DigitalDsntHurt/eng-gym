@@ -31,13 +31,9 @@ def contains_duplicate(nums)
   nums = nums.sort
   front = 0
   back = 1
+  
   while back < nums.length
-    if nums[front] == nums[back]
-      return true
-    else
-      front += 1
-      back += 1
-    end
+    nums[front] == nums[back] ? (return true) : (front += 1; back += 1)
   end
 
   false
