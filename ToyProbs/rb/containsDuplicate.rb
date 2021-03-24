@@ -28,9 +28,21 @@
 =end
 
 def contains_duplicate(nums)
-  nums.sort
+  nums = nums.sort
+  front = 0
+  back = 1
+  while back < nums.length
+    if nums[front] == nums[back]
+      return true
+    else
+      front += 1
+      back += 1
+    end
+  end
+
+  false
 end
 
-contains_duplicate([1,2,3,1])
-contains_duplicate([1,2,3,4])
-contains_duplicate([1,1,1,3,3,4,3,2,4,2])
+p contains_duplicate([1,2,3,1]) # true
+p contains_duplicate([1,2,3,4]) # false
+p contains_duplicate([1,1,1,3,3,4,3,2,4,2]) # true
