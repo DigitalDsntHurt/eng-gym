@@ -26,7 +26,7 @@
 */
 
 const hasCycle = (head) => {
-
+  if (!head || head.length === 0) { return false; }
   const traverse = (node) => {
     if (!node.next) { return false; }
     if (node.seen) { return true; }
