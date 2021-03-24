@@ -1,8 +1,40 @@
+
+***
+# Mar 24, 2021
+Started sharpening up my ruby again today, repeating older javascript toy problems. A few worthy notes...
+
+```
+# method definition
+def name_of_method(ordered_parameters)
+  puts 'hey we do some logic'
+  [1,2,3].push(ordered_parameters) # implicit returns
+end
+
+# method invocation
+name_of_method(99) # returns [1,2,3,99] after logging 'hey we do some logic'
+
+# if statement syntax
+if condition
+  thing to do
+else if other_condition
+  next thing to do
+else
+  last thing to do
+end
+
+# ternary syntax
+condition ? do if true : do if false
+
+# multiple expression ternary syntax
+
+condition ? (if true do this; then do this) : (if false do this; then do this; then do this)
+```
+
 ***
 # Mar 16, 2021
 So my linkedList's push implementation reveals an ambiguity in my thinking. I was setting the new node's next property to the current tail whereas it's the current tail whose next property should be set to the new node.
 
-The way i had it, isn't a real linkedList. In fact, it's almost a U where the head pointer points to the first node added and the tail pointer points to the most recently added node and each subsequently added node points to the previous node / previous tail. Whereas in reality, each time we add a new node to the tail, the previous tail should point to the new tail. 
+The way i had it, isn't a real linkedList. In fact, it's almost a U where the head pointer points to the first node added and the tail pointer points to the most recently added node and each subsequently added node points to the previous node / previous tail. Whereas in reality, each time we add a new node to the tail, the previous tail should point to the new tail.
 ***
 # Mar 15, 2021
 As life gets crazier, daily habits become more, not less important.
