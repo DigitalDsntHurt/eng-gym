@@ -28,7 +28,9 @@
 =end
 
 def contains_duplicate(nums)
-
+  nums.sort
 end
 
-contains_duplicate()
+contains_duplicate([1,2,3,1])
+contains_duplicate([1,2,3,4])
+contains_duplicate([1,1,1,3,3,4,3,2,4,2])
