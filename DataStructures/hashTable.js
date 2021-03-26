@@ -49,16 +49,13 @@ class HashTable {
     this.keyMap[hash].push([key, value]);
   }
 
-  // GET
-//   get(key) {
-//     let hash = _hash(key);
-//     let bucket = this.keyMap[key];
-//     if (!bucket) { return undefined; }
-//     for (let pair of bucket) {
-//       if (pair[0] === key) { return pair; }
-//     }
-//     return;
-//   }
+// GET
+  get(key) {
+    // hash the key, get index
+    // look in the hash table for that index
+      // if nothing exists there, return undefined
+      // if something exists there retrieve the key-value pair from the hash table and return it
+  }
 }
 
 let ht = new HashTable();
@@ -67,3 +64,5 @@ ht.set('james', 'bond')
 ht.set('ninetyNine', 'gretzgy')
 ht.set('first key', 'second val')
 console.log(JSON.stringify(ht));
+ht.get('james') // ['james', 'bond']
+ht.get('first key') // ['james', 'bond']
