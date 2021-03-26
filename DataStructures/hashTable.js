@@ -49,13 +49,8 @@ class HashTable {
     this.keyMap[hash].push([key, value]);
   }
 
-// GET
+  // GET
   get(key) {
-    // hash the key, get index
-    // look in the hash table for that index
-      // if nothing exists there, return undefined
-      // if something exists there retrieve the key-value pair from the hash table and return it
-
       let hash = this._hash(key);
       let bucket = this.keyMap[hash];
       if (bucket) {
@@ -64,6 +59,24 @@ class HashTable {
         }
       }
       return;
+  }
+
+  keys() {
+    // instantiate empty array
+    // iterate over each bucket in hash table
+    // if there's nothing in current bucket move on
+    // if there's somthing in current bucket iterate over it
+      // grab key and add to array
+    // return array
+  }
+
+  values() {
+    // instantiate empty array
+    // iterate over each bucket in hash table
+    // if there's nothing in current bucket move on
+    // if there's somthing in current bucket iterate over it
+      // grab value and add to array
+    // return array
   }
 }
 
