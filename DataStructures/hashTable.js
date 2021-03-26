@@ -55,14 +55,28 @@ class HashTable {
     // look in the hash table for that index
       // if nothing exists there, return undefined
       // if something exists there retrieve the key-value pair from the hash table and return it
+
+      let hash = this._hash(key);
+      let bucket = this.keyMap[hash];
+      if (bucket) {
+        for (let pair of bucket) {
+          if (pair[0] === key) { return pair[1]; }
+        }
+      }
+      return;
   }
 }
 
-let ht = new HashTable();
-ht.set('first key', 'first value')
-ht.set('james', 'bond')
-ht.set('ninetyNine', 'gretzgy')
-ht.set('first key', 'second val')
-console.log(JSON.stringify(ht));
-ht.get('james') // ['james', 'bond']
-ht.get('first key') // ['james', 'bond']
+let ht = new HashTable(17);
+ht.set("maroon","#800000")
+ht.set("yellow","#FFFF00")
+ht.set("olive","#808000")
+ht.set("salmon","#FA8072")
+ht.set("lightcoral","#F08080")
+ht.set("mediumvioletred","#C71585")
+ht.set("plum","#DDA0DD")
+console.log(JSON.stringify(ht))
+console.log(ht.get('salmon')) // #FA8072
+console.log(ht.get('lightcoral')) // #F08080
+console.log(ht.get('maroon')) // #800000
+console.log(ht.get('yellow')) // #FFFF00
