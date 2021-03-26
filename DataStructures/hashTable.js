@@ -62,21 +62,23 @@ class HashTable {
   }
 
   keys() {
-    // instantiate empty array
-    // iterate over each bucket in hash table
-    // if there's nothing in current bucket move on
-    // if there's somthing in current bucket iterate over it
-      // grab key and add to array
-    // return array
+    const keys = [];
+    this.keyMap.forEach(bucket => {
+      if (bucket) {
+        bucket.forEach(pair => { keys.push(pair[0]) })
+      }
+    })
+    return keys;
   }
 
   values() {
-    // instantiate empty array
-    // iterate over each bucket in hash table
-    // if there's nothing in current bucket move on
-    // if there's somthing in current bucket iterate over it
-      // grab value and add to array
-    // return array
+    const values = [];
+    this.keyMap.forEach(bucket => {
+      if (bucket) {
+        bucket.forEach(pair => { values.push(pair[1]) })
+      }
+    })
+    return values;
   }
 }
 
@@ -88,8 +90,14 @@ ht.set("salmon","#FA8072")
 ht.set("lightcoral","#F08080")
 ht.set("mediumvioletred","#C71585")
 ht.set("plum","#DDA0DD")
+// TESTS HASH TABLE CREATION + SET
 console.log(JSON.stringify(ht))
+// TESTS HASH TABLE GET
 console.log(ht.get('salmon')) // #FA8072
 console.log(ht.get('lightcoral')) // #F08080
 console.log(ht.get('maroon')) // #800000
 console.log(ht.get('yellow')) // #FFFF00
+// TESTS HASH TABLE KEYS
+console.log(ht.keys()) // ['maroon', 'yellow', 'olive', 'salmon', 'lightcoral', 'mediumvioletred', 'plum']
+// TESTS HASH TABLE VALUES
+console.log(ht.values()) //
