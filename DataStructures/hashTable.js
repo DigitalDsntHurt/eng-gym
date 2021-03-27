@@ -80,6 +80,21 @@ class HashTable {
     })
     return values;
   }
+
+  uniqueValues() {
+    const values = [];
+    this.keyMap.forEach(bucket => {
+      if (bucket) {
+        bucket.forEach(pair => {
+          if (!values.includes(pair[1])) {
+            values.push(pair[1])
+          }
+        })
+      }
+    })
+    return values;
+  }
+
 }
 
 let ht = new HashTable(17);
@@ -90,6 +105,8 @@ ht.set("salmon","#FA8072")
 ht.set("lightcoral","#F08080")
 ht.set("mediumvioletred","#C71585")
 ht.set("plum","#DDA0DD")
+ht.set("purple","#DDA0DD")
+ht.set("violet","#DDA0DD")
 // TESTS HASH TABLE CREATION + SET
 console.log(JSON.stringify(ht))
 // TESTS HASH TABLE GET
@@ -101,3 +118,4 @@ console.log(ht.get('yellow')) // #FFFF00
 console.log(ht.keys()) // ['maroon', 'yellow', 'olive', 'salmon', 'lightcoral', 'mediumvioletred', 'plum']
 // TESTS HASH TABLE VALUES
 console.log(ht.values()) //
+console.log(ht.uniqueValues()) //
