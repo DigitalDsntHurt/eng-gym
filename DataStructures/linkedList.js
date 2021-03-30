@@ -55,6 +55,7 @@ class LinkedList {
     // MY VERSION 2
     pop() {
       // if there are no nodes in the list return undefined
+      if (!this.head) { return; }
       // iterate over the list until you reach the tail
       // set the next property of the 2nd to last node to be meaningfully
       // set the tail to be the 2nd to last node
