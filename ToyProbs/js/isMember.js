@@ -25,13 +25,21 @@
  * check for length
  *   if lengths != move on
  *
- *
+ * move on to next if lengths !=
  */
-// move on to next if lengths !=
-words.forEach(word => {
+
+
+const isMember = (words, query) => {
+  for (word of words) {
+    if (query.length !== word.length) { continue; }
     for (i = 0; i < word.length; i++) {
-        if (query[i] !== '*' || word[i] !== query[i]) {
-            break;
-        }
+      if ((query[i] === '*' || query[i] === word[i]) && word[i+1] === undefined ) { return true; }
+      if (query[i] !== '*' && query[i] !== word[i]) { continue; }
     }
-})
+  }
+  return false;
+};
+
+console.log(isMember(["bar", "foo", "baz"], 'foo')); // true
+console.log(isMember(["foo", "bar", "baz"], 'cat')); // false
+console.log(isMember(["bar", "foo", "baz"], '**z')); // true
