@@ -16,16 +16,17 @@
 // #Output:
 
 /**
+ *
  * I : array of strings, query = string (may include wildcard)
  * O : boolean
  * E : n/a
  * C : ~ linear time ~ constant space
  *
- *
  * check for length
  *   if lengths != move on
  *
  * move on to next if lengths !=
+ * 
  */
 
 
