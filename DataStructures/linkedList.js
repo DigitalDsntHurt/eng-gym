@@ -21,13 +21,17 @@ class LinkedList {
 }
 
 class Node {
-  constructor() {
-
+  constructor(value) {
+    this.value = value;
+    this.next = null;
   }
 }
 
+// TEST NODE CLASS
 
-let ll = new LinkedList();
+
+// TEST LINKEDLIST CLASS
+// let ll = new LinkedList();
 
 
 
