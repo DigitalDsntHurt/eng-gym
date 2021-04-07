@@ -28,9 +28,18 @@ var getTotalWordCount = function(filePathOne, filePathTwo, callback) {
 };
 
 module.exports = getTotalWordCount;
-const fp1 = '/Users/attack/Eng/hrsprints/hr-sfo134-self-assessment-week-04-v7/async-word-count/files/fileOne.txt';
+// // ABSOLUTE PATH APPROACH
+// const fp1 = '/Users/attack/Eng/hrsprints/hr-sfo134-self-assessment-week-04-v7/async-word-count/files/fileOne.txt';
 const fp2 = '/Users/attack/Eng/hrsprints/hr-sfo134-self-assessment-week-04-v7/async-word-count/files/fileTwo.txt';
 
+// // REQUIRE APPROACH ~ does not work
+// const fp1 = require('./files/fileOne.txt')
+// const fp2 = require('./files/fileTwo.txt')
+
+// // RELATIVE APPROACH ~ does not work
+// const fp1 = path.relative('files', 'fileOne.txt')
+const fp1 = path.normalize('./files/fileOne.txt')
+console.log(fp1)
 getTotalWordCount(
   fp1, fp2, (err, tc) => {
     if (err) { throw err; }
