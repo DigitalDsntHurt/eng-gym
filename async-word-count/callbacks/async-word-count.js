@@ -27,10 +27,10 @@ var getTotalWordCount = function(filePathOne, filePathTwo, callback) {
   })
 };
 
-module.exports = getTotalWordCount;
 
-const fp1 = path.normalize('./files/fileOne.txt')
-const fp2 = path.normalize('./files/fileTwo.txt')
+const fp1 = path.join(__dirname, 'files/fileOne.txt');
+const fp2 = path.join(__dirname, 'files/fileTwo.txt');
+
 getTotalWordCount(
   fp1, fp2, (err, tc) => {
     if (err) { throw err; }
