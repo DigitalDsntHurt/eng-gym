@@ -25,4 +25,9 @@ const linearSearch = (array, target) => {
 //   return targetIdx;
 // }
 
+// // EVERY LOOP
+// const linearSearch = (array, target) => {
+//
+// };
+
 console.log(linearSearch([10,15,20,25,30], 15))
