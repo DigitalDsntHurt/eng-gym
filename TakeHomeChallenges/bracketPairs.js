@@ -33,7 +33,21 @@ STRATEGY
 
 */
  const hasValidBrackets = (string) => {
-   if (typeof string !== 'string' || string.length === 0 || string === undefined) { return null; }
-   let front = 0;
-   let back = string.length - 1;
+   const brackets = '(){}[]';
+   const regexp = new RegExp(/{|}|\[|\]|\(|\)/, 'g')
+   return regexp.test(string);
+   // if (typeof string !== 'string' || string === undefined || ) { return null; }
+   // if (string.length === 0 || )
+   //
+   // for (let char of string) {
+   //   if (brackets)
+   // }
+   //
+   // let front = 0;
+   // let back = string.length - 1;
  };
+
+ console.log(hasValidBrackets('hello moto'))
+ console.log(hasValidBrackets('hello {moto'))
+ console.log(hasValidBrackets('hello moto}'))
+ console.log(hasValidBrackets('hello [moto'))
