@@ -58,6 +58,7 @@ console.log(hasValidBrackets()) // null
 console.log(hasValidBrackets('')) // true
 // test no brackets returns true
 console.log(hasValidBrackets('hello moto')) // true
+// test only brackets remain
 // console.log(hasValidBrackets('hello {moto'))
 // console.log(hasValidBrackets('hello moto}'))
 // console.log(hasValidBrackets('hello [moto'))
