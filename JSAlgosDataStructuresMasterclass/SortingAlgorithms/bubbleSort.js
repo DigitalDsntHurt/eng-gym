@@ -29,11 +29,14 @@ const swapValues = (arr, idx1, idx2) => {
 // slightly optimized solution... does not spend extra, unnecessary iterations
 const bubbleSort = (arr) => {
   for (var i = arr.length; i > 0; i--) {
+    let madeSwaps = false;
     for (var j = 0; j < i - 1; j++) {
       if (arr[j] > arr[j +1]) {
         swapValues(arr, j, j+1);
+        madeSwaps = true;
       }
     }
+    if (!madeSwaps) { return arr; }
   }
   return arr;
 }
