@@ -15,17 +15,17 @@ const swapItems = (arr, idx1, idx2) => {
 // swapItems(arr2, 2, 0)
 // console.log(arr2) //['bubble', -22, 11]
 
-// NESTED LOOPS
-const bubbleSort = (arr) => {
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = 0; j < arr.length; j++) {
-      if (arr[j] > arr[j+1]) {
-        swapItems(arr, j, j+1);
-      }
-    }
-  }
-  return arr;
-};
+// // NESTED LOOPS
+// const bubbleSort = (arr) => {
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let j = 0; j < arr.length; j++) {
+//       if (arr[j] > arr[j+1]) {
+//         swapItems(arr, j, j+1);
+//       }
+//     }
+//   }
+//   return arr;
+// };
 
 /*
   the nested loop approach works but is super inefficient
@@ -38,14 +38,33 @@ const bubbleSort = (arr) => {
   to solve this below, we're going to write an outer loop that
   counts down from the length of the input array,
   then use the outer loop's count-down variable to dynamically constrain
-  the work being done by the inner loop at each iteration. 
+  the work being done by the inner loop at each iteration.
 */
 
-// // NESTED LOOPS WITHOUT EXTRA ITERATION
-// const bubbleSort = (arr) => {
-//
-// };
-//
+// NESTED LOOPS WITHOUT EXTRA ITERATION
+const bubbleSort = (arr) => {
+  for (let i = arr.length; i > 0; i--) {
+    for (let j = 0; j < i - 1; j++) {
+      swapItems(arr, j, j + 1);
+    }
+  }
+  return arr;
+};
+
+/*
+  the above solution prevents extra, unnecessary iterations by constraining
+  the number of iterations performed by the inner loop
+  but the time complexity is still quadratic.
+
+  additionally, the above solution suffers from the defect that,
+  if the outer loop every copmletes without swapping any elements
+  we know the entire array is now sorted and could return early
+  but in the above solution will continue their work.
+
+  below, we will use a boolean flag to track if each iteration does
+  in fact swap elements, and if it doesn't return early.
+*/
+
 // // NESTED LOOPS WITHOUT EXTRA ITERATION OPTIMIZED FOR NEARLY SORTED INPUTS
 // const bubbleSort = (arr) => {
 //
