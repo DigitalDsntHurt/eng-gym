@@ -41,15 +41,15 @@ const swapItems = (arr, idx1, idx2) => {
   the work being done by the inner loop at each iteration.
 */
 
-// NESTED LOOPS WITHOUT EXTRA ITERATION
-const bubbleSort = (arr) => {
-  for (let i = arr.length; i > 0; i--) {
-    for (let j = 0; j < i - 1; j++) {
-      swapItems(arr, j, j + 1);
-    }
-  }
-  return arr;
-};
+// // NESTED LOOPS WITHOUT EXTRA ITERATION
+// const bubbleSort = (arr) => {
+//   for (let i = arr.length; i > 0; i--) {
+//     for (let j = 0; j < i - 1; j++) {
+//       swapItems(arr, j, j + 1);
+//     }
+//   }
+//   return arr;
+// };
 
 /*
   the above solution prevents extra, unnecessary iterations by constraining
@@ -66,9 +66,17 @@ const bubbleSort = (arr) => {
 */
 
 // // NESTED LOOPS WITHOUT EXTRA ITERATION OPTIMIZED FOR NEARLY SORTED INPUTS
-// const bubbleSort = (arr) => {
-//
-// };
+const bubbleSort = (arr) => {
+  let swapped = false;
+  for (let i = arr.length; i > 0; i--) {
+    for (let j = 0; j < i - 1; j++) {
+      swapItems(arr, j, j + 1);
+      swapped = true;
+    }
+    if (!swapped) { break; }
+  }
+  return arr;
+};
 
 console.log(bubbleSort([3,33,54,2,1])) // [1, 2, 3, 33, 54]
 console.log(bubbleSort([3,-4,-5])) // [-5, -4, 3]
