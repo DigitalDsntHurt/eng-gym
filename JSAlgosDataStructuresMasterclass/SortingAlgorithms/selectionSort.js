@@ -38,9 +38,18 @@ console.log(arr); // [8, 2, 3, 4, 5, 6, 7, 1]
 // FIRST ATTEMPT
 const selectionSort = (collection) => {
   for (let i = 0; i < collection.length; i++) {
-    const outerVal = collection[i];
-    for (let j = i + 1; j < collection.length; j++) {
-      const innerVal = collection[j];
+    let pointerIndex = i + 1;
+    let pointerValue = collection[pointerIndex];
+    for (let j = pointerIndex + 1; j < collection.length; j++) {
+      let tryValue = collection[j];
+      if (tryValue < pointerValue) { pointerIndex = j; }
     }
+    if (collection[pointerIndex] < collection[i]) { swapItems(collection, i, pointerIndex)}
   }
+  return collection;
 };
+// TESTS
+console.log(selectionSort([11,1])) // [1, 11]
+console.log(selectionSort([1,11])) // [1, 11]
+console.log(selectionSort([44, 444, -4, 4])) // [-4, 4, 44, 444]
+console.log(selectionSort([-44, 444, 4, 4])) // [-44, 4, 4, 444]
