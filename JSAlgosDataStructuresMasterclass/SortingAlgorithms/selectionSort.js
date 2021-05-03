@@ -100,3 +100,19 @@ console.log(selectionSort([11,1])) // [1, 11]
 console.log(selectionSort([1,11])) // [1, 11]
 console.log(selectionSort([44, 444, -4, 4])) // [-4, 4, 44, 444]
 console.log(selectionSort([-44, 444, 4, 4])) // [-44, 4, 4, 444]
+
+
+/*
+  selection sort is O(n**2) quadratic time, which is similar to bubble sort
+  except the best implementations of bubble sort provide for doing less work
+  given a nearly sorted input collection.
+
+  the only time selection sort is preferable to bubble sort is in cases where
+  we're concerned with ram.
+
+  selection sort does a lot of nested iterating and a lot of comparisons but
+  only actually swaps values at most once per out loop. whereas bubble sort
+  is swapping every time through the inner loop. it's rare we would care about
+  this internal memory usage difference, but if we did we might choose
+  selection sort over bubble. 
+*/
