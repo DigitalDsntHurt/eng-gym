@@ -85,17 +85,14 @@ const swapItems = (arr, i1, i2) => {
   - repeat this with the next element until the array is sorted
 */
 const selectionSort = (arr) => {
-
   for (var i = 0; i < arr.length; i++) {
     let smallest = i;
     for (var j = i + 1; j < arr.length; j++) {
       if (arr[j] < arr[smallest]) { smallest = j; }
     }
-    // if (arr[i] !== arr[smallest]) { swapItems(arr, i, smallest); }
     if (i !== smallest) { swapItems(arr, i, smallest); }
   }
   return arr;
-
 };
 
 // TESTS
