@@ -91,7 +91,8 @@ const selectionSort = (arr) => {
     for (var j = i + 1; j < arr.length; j++) {
       if (arr[j] < arr[smallest]) { smallest = j; }
     }
-    if (arr[i] !== arr[smallest]) { swapItems(arr, i, smallest); }
+    // if (arr[i] !== arr[smallest]) { swapItems(arr, i, smallest); }
+    if (i !== smallest) { swapItems(arr, i, smallest); }
   }
   return arr;
 
