@@ -49,12 +49,26 @@ const swapItems = (arr, i1, i2) => {
 //   return collection;
 // };
 
-// SECOND ATTEMPT
+// // SECOND ATTEMPT // !!NO!!
+// const selectionSort = (collection) => {
+//   for (var i = 0; i < collection.length; i++) {
+//     for (var j = i + 1; j < collection.length; j++) {
+//       if (collection[j] < collection[i]) { swapItems(collection, i, j)}
+//     }
+//   }
+//   return collection;
+// };
+
+// THIRD ATTEMPT //WORKS
 const selectionSort = (collection) => {
   for (var i = 0; i < collection.length; i++) {
+    let minValIdx = i;
     for (var j = i + 1; j < collection.length; j++) {
-      if (collection[j] < collection[i]) { swapItems(collection, i, j)}
+      if (collection[j] < collection[minValIdx]) {
+        minValIdx = j;
+      }
     }
+    if ( collection[minValIdx] < collection[i]) { swapItems(collection, i, minValIdx); }
   }
   return collection;
 };
