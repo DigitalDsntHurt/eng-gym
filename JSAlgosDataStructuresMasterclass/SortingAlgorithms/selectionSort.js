@@ -59,18 +59,42 @@ const swapItems = (arr, i1, i2) => {
 //   return collection;
 // };
 
-// THIRD ATTEMPT //WORKS
-const selectionSort = (collection) => {
-  for (var i = 0; i < collection.length; i++) {
-    let minValIdx = i;
-    for (var j = i + 1; j < collection.length; j++) {
-      if (collection[j] < collection[minValIdx]) {
-        minValIdx = j;
-      }
+// // THIRD ATTEMPT //WORKS
+// const selectionSort = (collection) => {
+//   for (var i = 0; i < collection.length; i++) {
+//     let minValIdx = i;
+//     for (var j = i + 1; j < collection.length; j++) {
+//       if (collection[j] < collection[minValIdx]) {
+//         minValIdx = j;
+//       }
+//     }
+//     if ( collection[minValIdx] < collection[i]) { swapItems(collection, i, minValIdx); }
+//   }
+//   return collection;
+// };
+
+// REWRITE FROM PSEUDOCODE
+/*
+  - store the first element as the smalest value seen so far
+  - compare this item to the next item in the array until you find
+  a smaller number
+  - if a smaller number is found, designate that smaller number to be
+  the new minimum and continue until the end of the array
+  - if the minimum is not the value (index) you initially began with,
+  swap the two values
+  - repeat this with the next element until the array is sorted
+*/
+const selectionSort = (arr) => {
+
+  for (var i = 0; i < arr.length; i++) {
+    let smallest = i;
+    for (var j = i + 1; j < arr.length; j++) {
+      if (arr[j] < arr[smallest]) { smallest = j; }
     }
-    if ( collection[minValIdx] < collection[i]) { swapItems(collection, i, minValIdx); }
+    if (arr[i] !== arr[smallest]) { swapItems(arr, i, smallest); }
   }
-  return collection;
+  return arr;
+
 };
 
 // TESTS
