@@ -30,24 +30,35 @@ const swapItems = (arr, i1, i2) => {
   arr[i1] = arr[i2];
   arr[i2] = tmp;
 };
-// TEST SWAP ITEMS
-let arr = [1,2,3,4,5,6,7,8];
-swapItems(arr, 7, 0);
-console.log(arr); // [8, 2, 3, 4, 5, 6, 7, 1]
+// // TEST SWAP ITEMS
+// let arr = [1,2,3,4,5,6,7,8];
+// swapItems(arr, 7, 0);
+// console.log(arr); // [8, 2, 3, 4, 5, 6, 7, 1]
 
-// FIRST ATTEMPT
+// // FIRST ATTEMPT // NO!!
+// const selectionSort = (collection) => {
+//   for (let i = 0; i < collection.length; i++) {
+//     let pointerIndex = i + 1;
+//     let pointerValue = collection[pointerIndex];
+//     for (let j = pointerIndex + 1; j < collection.length; j++) {
+//       let tryValue = collection[j];
+//       if (tryValue < pointerValue) { pointerIndex = j; }
+//     }
+//     if (collection[pointerIndex] < collection[i]) { swapItems(collection, i, pointerIndex)}
+//   }
+//   return collection;
+// };
+
+// SECOND ATTEMPT
 const selectionSort = (collection) => {
-  for (let i = 0; i < collection.length; i++) {
-    let pointerIndex = i + 1;
-    let pointerValue = collection[pointerIndex];
-    for (let j = pointerIndex + 1; j < collection.length; j++) {
-      let tryValue = collection[j];
-      if (tryValue < pointerValue) { pointerIndex = j; }
+  for (var i = 0; i < collection.length; i++) {
+    for (var j = i + 1; j < collection.length; j++) {
+      if (collection[j] < collection[i]) { swapItems(collection, i, j)}
     }
-    if (collection[pointerIndex] < collection[i]) { swapItems(collection, i, pointerIndex)}
   }
   return collection;
 };
+
 // TESTS
 console.log(selectionSort([11,1])) // [1, 11]
 console.log(selectionSort([1,11])) // [1, 11]
