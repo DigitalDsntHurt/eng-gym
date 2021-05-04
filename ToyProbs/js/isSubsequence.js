@@ -9,6 +9,10 @@ E : n/a (no inputs provided, one input provided, more than 2 inputs provided, on
 C : n/a
 
 STRATEGY
+  for each character in second string
+    if current char equals first char in first string
+      instantiate a pointer pointing to the next char in the first string
+      iterate over each char in the first string
 
 
 */
@@ -18,6 +22,7 @@ const isSubsequnce = (str1, str2) => {
 }
 
 console.log(isSubsequnce('hello', 'hello world')); // true
+console.log(isSubsequnce('hello', 'oh hello world')); // true
 console.log(isSubsequnce('sing', 'sting')); // true
 console.log(isSubsequnce('abc', 'abracadabra')); // true
 console.log(isSubsequnce('abc', 'acb')); // false
