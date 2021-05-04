@@ -15,6 +15,7 @@
 function isValidSubsequence(array, sequence) {
   sequencePointer = 0;
 	for (let arrayPointer = 0; arrayPointer < array.length; arrayPointer++) {
+		if (sequencePointer === sequence.length) { break; }
 		if (array[arrayPointer] === sequence[sequencePointer]) {
 			sequencePointer++;
 		}
