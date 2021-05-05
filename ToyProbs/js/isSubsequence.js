@@ -7,17 +7,17 @@
 // disturbing the relative positions of the remaining characters.
 // (i.e., "ace" is a subsequence of "abcde" while "aec" is not).
 
-var isSubsequence = function(s, t) {
-    let sPoint = 0;
-    let tPoint = 0;
-    while (sPoint < s.length && tPoint < t.length) {
-        if (s[sPoint] === t[tPoint]) {
-            sPoint++;
-        }
-        tPoint++;
-    }
-    return sPoint === s.length;
-};
+// var isSubsequence = function(s, t) {
+//     let sPoint = 0;
+//     let tPoint = 0;
+//     while (sPoint < s.length && tPoint < t.length) {
+//         if (s[sPoint] === t[tPoint]) {
+//             sPoint++;
+//         }
+//         tPoint++;
+//     }
+//     return sPoint === s.length;
+// };
 
 /*
 https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/learn/lecture/11351742#overview
@@ -34,12 +34,18 @@ STRATEGY
     if current char equals first char in first string
       instantiate a pointer pointing to the next char in the first string
       iterate over each char in the first string
-
-
 */
 
-const isSubsequnce = (str1, str2) => {
-
+function isSubsequence(sub, full) {
+  let sPoint = 0;
+  let fPoint = 0;
+  while (sPoint < sub.length && fPoint < full.length) {
+    if (sub[sPoint] === full[fPoint]) {
+        sPoint++;
+    }
+    fPoint++;
+  }
+  return sPoint === sub.length;
 }
 
 console.log(isSubsequnce('hello', 'hello world')); // true
