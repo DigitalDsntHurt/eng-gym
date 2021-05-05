@@ -1,3 +1,24 @@
+//
+//// LEETCODE
+//
+// Given two strings s and t, check if s is a subsequence of t.
+// A subsequence of a string is a new string that is formed from the
+// original string by deleting some (can be none) of the characters without
+// disturbing the relative positions of the remaining characters.
+// (i.e., "ace" is a subsequence of "abcde" while "aec" is not).
+
+var isSubsequence = function(s, t) {
+    let sPoint = 0;
+    let tPoint = 0;
+    while (sPoint < s.length && tPoint < t.length) {
+        if (s[sPoint] === t[tPoint]) {
+            sPoint++;
+        }
+        tPoint++;
+    }
+    return sPoint === s.length;
+};
+
 /*
 https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/learn/lecture/11351742#overview
 take in two strings and determine whether or not the characters in the first occur in the second.
