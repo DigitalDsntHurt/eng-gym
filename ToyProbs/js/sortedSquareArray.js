@@ -4,11 +4,16 @@
     calculate item's square
     replace current array item with squared array item
   return array
-*/
 
+  The approach below is O(n) time and O(1) space
+  But it only works for array input with positive numbers
+  For a more generic solution we need to account for the fact that the order
+  changes whne dealing with arrays of negative and both positive and negative
+  numbers.
+*/
 function sortedSquaredArray(array) {
   for (var i = 0; i < array.length; i++) {
-    array[i] = array[i] ** 2;
+    array[i] = array[i] * array[i];
   }
   return array;
 }
