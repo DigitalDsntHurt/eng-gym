@@ -44,12 +44,11 @@ function sortedSquaredArray(array) {
     if (min === smallVal) {
       sortedSquares.push(smallVal * smallVal);
       small++;
-    }
-    if (min === largeVal) {
+    } else {
       sortedSquares.push(largeVal * largeVal);
       large--;
     }
-  }
+  }  
   return sortedSquares;
 }
 
