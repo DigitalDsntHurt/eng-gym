@@ -34,7 +34,23 @@
   return sorted results array
 */
 function sortedSquaredArray(array) {
-
+  let sortedSquares = [];
+  let small = 0;
+  let large = array.length - 1;
+  while (small <= large) {
+    let smallVal = array[small];
+    let largeVal = array[large];
+    let min = Math.min(Math.abs(smallVal), Math.abs(largeVal))
+    if (min === smallVal) {
+      sortedSquares.push(smallVal * smallVal);
+      small++;
+    }
+    if (min === largeVal) {
+      sortedSquares.push(largeVal * largeVal);
+      large--;
+    }
+  }
+  return sortedSquares;
 }
 
 console.log(sortedSquaredArray([1, 2, 3, 5, 6, 8, 9])) // [1,4,9,25,36,64,81]
