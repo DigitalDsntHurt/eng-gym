@@ -40,15 +40,15 @@ function sortedSquaredArray(array) {
   while (small <= large) {
     let smallVal = array[small];
     let largeVal = array[large];
-    let min = Math.min(Math.abs(smallVal), Math.abs(largeVal))
-    if (min === smallVal) {
-      sortedSquares.push(smallVal * smallVal);
+    let max = Math.max(Math.abs(smallVal), Math.abs(largeVal))
+    if (max === smallVal) {
+      sortedSquares.unshift(smallVal * smallVal);
       small++;
     } else {
-      sortedSquares.push(largeVal * largeVal);
+      sortedSquares.unshift(largeVal * largeVal);
       large--;
     }
-  }  
+  }
   return sortedSquares;
 }
 
