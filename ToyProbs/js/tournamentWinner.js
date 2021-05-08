@@ -1,3 +1,6 @@
+
+//// FIRST APPROACH
+////// O(2N) TIME, O(N) SPACE
 // initialize a totalScores hash
 // iterate over results array
   // create alias for current competition
@@ -30,3 +33,9 @@ function tournamentWinner(competitions, results) {
 
   return winningTeam;
 }
+
+// next steps
+// it should be possible to get the time complexity down to O(n) by keeping
+// track of the current max score and current wining team as we build the
+// totalScores hash, this would prevent us from having to perform a second loop
+// where we loop over the hash table to derive the winner. 
