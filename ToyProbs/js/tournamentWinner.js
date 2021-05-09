@@ -10,9 +10,41 @@
 
 // iterate over each item in totalScores hash, keeping track of team name with largest total score
 // reutrn winning team name
+//
+// function tournamentWinner(competitions, results) {
+//   let totalScores = {};
+// 	for (let i = 0; i < results.length; i++) {
+// 		if (results[i] === 1) {
+// 			totalScores[competitions[i][0]] = totalScores[competitions[i][0]] + 3 || 3;
+// 		}
+// 		if (results[i] === 0) {
+// 			totalScores[competitions[i][1]] = totalScores[competitions[i][1]] + 3 || 3;
+// 		}
+// 	}
+//
+// 	let maxScore = 0;
+// 	let winningTeam = '';
+// 	for (let team in totalScores) {
+// 		if (totalScores[team] > maxScore) {
+// 			maxScore = totalScores[team];
+// 			winningTeam = team;
+// 		}
+// 	}
+//
+//   return winningTeam;
+// }
+
+// next steps
+// it should be possible to get the time complexity down to O(n) by keeping
+// track of the current max score and current wining team as we build the
+// totalScores hash, this would prevent us from having to perform a second loop
+// where we loop over the hash table to derive the winner.
+
+// // SOLUTION OPTIMIZATION
+// below we tweak the solution slightly to use fewer aliases in the second loop
 
 function tournamentWinner(competitions, results) {
-  let totalScores = {};
+  let totalScores = {'': 0};
 	for (let i = 0; i < results.length; i++) {
 		if (results[i] === 1) {
 			totalScores[competitions[i][0]] = totalScores[competitions[i][0]] + 3 || 3;
@@ -22,11 +54,11 @@ function tournamentWinner(competitions, results) {
 		}
 	}
 
-	let maxScore = 0;
+	// let maxScore = 0;
 	let winningTeam = '';
 	for (let team in totalScores) {
-		if (totalScores[team] > maxScore) {
-			maxScore = totalScores[team];
+		if (totalScores[team] > totalScores[winningTeam]) {
+			// maxScore = totalScores[team];
 			winningTeam = team;
 		}
 	}
@@ -34,8 +66,5 @@ function tournamentWinner(competitions, results) {
   return winningTeam;
 }
 
-// next steps
-// it should be possible to get the time complexity down to O(n) by keeping
-// track of the current max score and current wining team as we build the
-// totalScores hash, this would prevent us from having to perform a second loop
-// where we loop over the hash table to derive the winner. 
+// Do not edit the line below.
+exports.tournamentWinner = tournamentWinner;
