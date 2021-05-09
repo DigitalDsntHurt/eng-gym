@@ -40,31 +40,56 @@
 // totalScores hash, this would prevent us from having to perform a second loop
 // where we loop over the hash table to derive the winner.
 
-// // SOLUTION OPTIMIZATION
-// below we tweak the solution slightly to use fewer aliases in the second loop
+// // // SOLUTION OPTIMIZATION #1
+// // below we tweak the solution slightly to use fewer aliases in the second loop
+//
+// function tournamentWinner(competitions, results) {
+//   let totalScores = {'': 0};
+// 	for (let i = 0; i < results.length; i++) {
+// 		if (results[i] === 1) {
+// 			totalScores[competitions[i][0]] = totalScores[competitions[i][0]] + 3 || 3;
+// 		}
+// 		if (results[i] === 0) {
+// 			totalScores[competitions[i][1]] = totalScores[competitions[i][1]] + 3 || 3;
+// 		}
+// 	}
+//
+// 	// let maxScore = 0;
+// 	let winningTeam = '';
+// 	for (let team in totalScores) {
+// 		if (totalScores[team] > totalScores[winningTeam]) {
+// 			// maxScore = totalScores[team];
+// 			winningTeam = team;
+// 		}
+// 	}
+//
+//   return winningTeam;
+// }
+
+// // SOLUTION OPTIMIZATION #2
+// below we tweak the solution slightly
+// we initialize the totalScores hash w a key of empty string & a value of 0
+// we also initialize a winningTeam variable to hold an empty string
+// this way we can set the winning team within the main loop
+// without having to build a second loop to traverse the completed total scores hash
+//
 
 function tournamentWinner(competitions, results) {
+  let winningTeam = '';
   let totalScores = {'': 0};
 	for (let i = 0; i < results.length; i++) {
 		if (results[i] === 1) {
 			totalScores[competitions[i][0]] = totalScores[competitions[i][0]] + 3 || 3;
+      if (totalScores[competitions[i][0]] > totalScores[winningTeam]) {
+        winningTeam = competitions[i][0];
+      }
 		}
 		if (results[i] === 0) {
 			totalScores[competitions[i][1]] = totalScores[competitions[i][1]] + 3 || 3;
+      if (totalScores[competitions[i][1]] > totalScores[winningTeam]) {
+        winningTeam = competitions[i][1];
+      }
 		}
 	}
-
-	// let maxScore = 0;
-	let winningTeam = '';
-	for (let team in totalScores) {
-		if (totalScores[team] > totalScores[winningTeam]) {
-			// maxScore = totalScores[team];
-			winningTeam = team;
-		}
-	}
-
   return winningTeam;
 }
-
-// Do not edit the line below.
-exports.tournamentWinner = tournamentWinner;
