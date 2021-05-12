@@ -6,6 +6,10 @@
   // else changeSum += current item
 // if we get to the end of the loop return changeSum + 1
 
+// THIS SOLUTION RUNS IN
+// O(NlogN) LOGARITHMIC TIME
+// O(1) CONSTANT SPACE
+// THE LOGARITHMIC TIME COMES FROM THE SORT FUNCTION 
 const nonConstructibleChange = coins => {
   coins = coins.sort((a, b) => ( a - b ))
   let changeSum = 0;
