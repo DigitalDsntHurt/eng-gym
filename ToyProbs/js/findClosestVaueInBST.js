@@ -21,7 +21,38 @@
   // go to next node on right
 
 function findClosestValueInBst(tree, target) {
-  // Write your code here.
+  let closest = Infinity;
+
+	const traverseTo = (node) => {
+		let currentVal = node.value;
+		let absDiffCurrent = Math.abs(target - currentVal);
+		let absDiffClosest = Math.abs(target - closest);
+
+		if (absDiffCurrent < absDiffClosest) {
+			closest = currentVal;
+		}
+		if (closest === target) {
+			return closest;
+		}
+
+		if (target >= currentVal) {
+			if (!node.right) {
+				return closest;
+			} else {
+				return traverseTo(node.right);
+			}
+		}
+		if (target < currentVal) {
+			if (!node.left) {
+				return closest
+			} else {
+				return traverseTo(node.left);
+			}
+		}
+	}
+
+	// invoke recursive helper
+	return traverseTo(tree);
 }
 
 // This is the class of the input tree. Do not edit.
@@ -33,24 +64,11 @@ class BST {
   }
 }
 
-// TEST CASES
-// {
-//   "tree": {
-//     "nodes": [
-//       {"id": "10", "left": "5", "right": "15", "value": 10},
-//       {"id": "15", "left": "13", "right": "22", "value": 15},
-//       {"id": "22", "left": null, "right": null, "value": 22},
-//       {"id": "13", "left": null, "right": "14", "value": 13},
-//       {"id": "14", "left": null, "right": null, "value": 14},
-//       {"id": "5", "left": "2", "right": "5-2", "value": 5},
-//       {"id": "5-2", "left": null, "right": null, "value": 5},
-//       {"id": "2", "left": "1", "right": null, "value": 2},
-//       {"id": "1", "left": null, "right": null, "value": 1}
-//     ],
-//     "root": "10"
-//   },
-//   "target": 12
-// }
+// Do not edit the line below.
+exports.findClosestValueInBst = findClosestValueInBst;
+
+
+
 const tree = {
   "nodes": [
     {"id": "10", "left": "5", "right": "15", "value": 10},
