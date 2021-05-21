@@ -34,6 +34,15 @@ class Node {
     return this;
   }
 
+  // PURE RECURSIVE PATTERN
+  depthFirstSearch(array) {
+    array.push(this.name);
+    for (let child of this.children) {
+      child.depthFirstSearch(array)
+    }
+    return array;
+  }
+  // RECURSIVE HELPER PATTERN
   depthFirstSearch(array) {
 		const populateNodesArray = (node) => {
 			array.push(node.name);
