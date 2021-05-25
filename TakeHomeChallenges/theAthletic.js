@@ -11,13 +11,14 @@ Output: 3
  */
 
 // SORT VERSION
+// O(NlogN) time
+// O(1) space
 const missingNumber = (arr) => {
   arr.sort((a,b) => a - b);
   for (let i = 0; i < arr.length; i++) {
     if (arr[i = i] !== arr[i] + 1) { return arr[i] + 1; }
   }
 };
-
 
 // HASH TABLE VERSION
 
