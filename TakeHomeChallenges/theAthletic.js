@@ -10,8 +10,16 @@ Input: [4, 5, 1, 2, 6]
 Output: 3
  */
 
-/*
-*/
+// SORT VERSION
+const missingNumber = (arr) => {
+  arr.sort((a,b) => a - b);
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i = i] !== arr[i] + 1) { return arr[i] + 1; }
+  }
+};
+
+
+// HASH TABLE VERSION
 
 /*
 WHAT I ACTUALLY WROTE IN THE INTERVIEW
