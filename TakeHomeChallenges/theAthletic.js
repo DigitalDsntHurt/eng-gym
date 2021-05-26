@@ -13,15 +13,24 @@ Output: 3
 // SORT VERSION
 // O(NlogN) time
 // O(1) space
-const missingNumber = (arr) => {
-  arr.sort((a,b) => a - b);
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i = i] !== arr[i] + 1) { return arr[i] + 1; }
-  }
-};
+// const missingNumber = (arr) => {
+//   arr.sort((a,b) => a - b);
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i = i] !== arr[i] + 1) { return arr[i] + 1; }
+//   }
+// };
 
 // HASH TABLE VERSION
 
+const missingNumber = (arr) => {
+ let ref = new Array().fill(-1);
+ for (let i = 0; i < arr.length; i++) {
+   ref[i] = arr[i];
+ }
+ return ref.filter(x => x === -1);
+};
+
+console.log(missingNumber([4, 5, 1, 2, 6]))//3
 /*
 WHAT I ACTUALLY WROTE IN THE INTERVIEW
 
