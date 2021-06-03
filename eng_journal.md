@@ -1,4 +1,17 @@
 ***
+# June 3, 2021
+
+first fb tech screen
+
+given
+- P = an array of coordinates [(5,3),(1,2),(6,4)]
+- r = a number representing a radius length
+- Q = an array of coordinates [(1,2),(2,1),(3,3)]
+
+return an array of coordinates of length Q
+where returnArray[i] = a point within P that is within r of Q[i]
+if there is no point in P that is within r of a given point in Q, add [null, null] to the return array.
+***
 # June 2, 2021
 ***
 # May 31, 2021
