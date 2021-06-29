@@ -1,3 +1,4 @@
 node_modules
 package-lock.json
 TakeHomeChallenges/fullstacklabs
+.DS_Store
